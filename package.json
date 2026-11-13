@@ -9,7 +9,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@google/genai": "^3.3.0",
+    "@scalekit-sdk/node": "^2.21.0",
+    "axios": "^1.21.1",
+    "dotenv": "^18.0.10",
+    "i": "^0.3.7",
+    "mongoose": "^9.12.1",
+    "motion": "^14.12.0",
     "next": "16.4.6",
+    "npm": "^12.2.2",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
@@ -21,6 +29,13 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
     "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
 }

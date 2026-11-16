@@ -1,22 +1,16 @@
-
-import React, { Suspense } from "react";
-import HomeClient from "./Components/HomeClient";
+import { Suspense } from "react";
 import { getSession } from "@/lib/getSession";
+import HomeClient from "./Components/HomeClient";
 
 const HomeContent = async () => {
   const session = await getSession();
-
-  return (
-    <HomeClient email={session?.user?.email ?? ""} />
-  );
+  return <HomeClient email={session?.user?.email ?? ""} />;
 };
 
-const Home = () => {
+export default function Page() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="min-h-screen" />}>
       <HomeContent />
     </Suspense>
   );
-};
-
-export default Home;
+}

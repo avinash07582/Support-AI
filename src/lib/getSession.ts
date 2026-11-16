@@ -1,8 +1,9 @@
-
+import { connection } from "next/server";
 import { cookies } from "next/headers";
 import { scalekit } from "./scalekit";
 
 export const getSession = async () => {
+      await connection();
   const session = await cookies();
   const token = session.get("access_token")?.value;
 

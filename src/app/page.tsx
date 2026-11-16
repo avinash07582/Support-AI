@@ -1,17 +1,22 @@
-import React from 'react'
-import HomeClient from './Components/HomeClient'
-import { getSession } from '@/lib/getSession'
 
-const Home = async () => {
+import React, { Suspense } from "react";
+import HomeClient from "./Components/HomeClient";
+import { getSession } from "@/lib/getSession";
 
-  const session = await  getSession()
-  console.log(session);
-  
+const HomeContent = async () => {
+  const session = await getSession();
+
   return (
-    <div>
     <HomeClient email={session?.user?.email ?? ""} />
-    </div>
-  )
-}
+  );
+};
 
-export default Home
+const Home = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  );
+};
+
+export default Home;

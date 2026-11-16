@@ -2,6 +2,7 @@
 import { scalekit } from "@/lib/scalekit";
 import { NextRequest, NextResponse } from "next/server";
 
+
 export const GET = async (req: NextRequest) => {
   try {
     const { searchParams } = new URL(req.url);
@@ -16,12 +17,10 @@ export const GET = async (req: NextRequest) => {
       );
     }
 
-   const session = await scalekit.authenticateWithCode(
-  code,
-  redirectUri
-);
-
-
+    const session = await scalekit.authenticateWithCode(
+      code,
+      redirectUri
+    );
 
     if (!session.accessToken) {
       return NextResponse.json(
@@ -43,7 +42,6 @@ export const GET = async (req: NextRequest) => {
     });
 
     return response;
-
   } catch (error) {
     console.error("Authentication callback error:", error);
 
